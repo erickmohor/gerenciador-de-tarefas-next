@@ -1,0 +1,99 @@
+@import './config.scss';
+
+.container-filter{
+    margin-top: 16px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    background-color: $mediumGreyColorOpacity;
+    border-radius: 12px;
+    padding: 10px;
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            font-size: 18px;
+            color: $primaryColor;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        form {
+            display: none;
+        }
+    }
+
+    .filterMobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-bottom: 8px;
+
+            label {
+                color: $primaryColor;
+                font-size: 16px;
+                min-width: 110px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    @media screen and (min-width:$mediaQueryDesktop) {
+        padding: 10px 20px;
+
+        .title {
+
+            input[type="date"] {
+                max-width: 160px;
+            }
+
+            img {
+                display: none;
+            }
+
+            form {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                label {
+                    color: $primaryColor;
+                    font-size: 16px;
+                    margin: 0 10px;
+                }
+
+                input, select {
+                    border: 1px solid $primaryColor;
+                }
+
+                .line {
+                    border: 1px solid $primaryColor;
+                    height: 40px;
+                    width: 0px;
+                    margin-left: 15px;
+                }
+            }
+        }
+
+        .filterMobile {
+            display: none;
+        }
+    }
+}
